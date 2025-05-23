@@ -1,73 +1,328 @@
-body {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0 10px;
-  display: flex;
-  background: #752738;
-  justify-content: center;
-  align-items: center;
-}
-.login_form {
-  width: 100%;
-  max-width: 435px;
-  background: #fff;
-  border-radius: 6px;
-  padding: 41px 30px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-form .input_box label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-/* Input field styling */
-form .input_box input {
-  width: 100%;
-  height: 57px;
-  border: 1px solid #dadaf2;
-  border-radius: 5px;
-  outline: none;
-  background: #f8f8fb;
-  font-size: 17px;
-  padding: 0px 20px;
-  margin-bottom: 25px;
-  transition: 0.2s ease;
-}
-form .input_box input:focus {
-  border-color: #752738;
-}
-form .input_box .password_title {
-  display: flex;
-  justify-content: space-between;
+.App {
   text-align: center;
 }
-form .input_box {
-  position: relative;
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
-a {
-  text-decoration: none;
-  color: #752738;
-  font-weight: 500;
+
+.App-link {
+  color: #61dafb;
 }
-a:hover {
-  text-decoration: underline;
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-/* Login button styling */
-form button {
+
+.login-container {
+  max-width: 350px;
+  padding: 35px;
+  border: 4px solid #6b1500;
+  border-radius: 30px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+.login-container input {
   width: 100%;
-  height: 56px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  background: #752738;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-bottom: 28px;
-  transition: 0.3s ease;
+  padding: 8px;
+  margin: 10px 0;
+  font-family: "Times New Roman", Times, serif;
+  align-items: center;
 }
-form button:hover {
-  background: #4954d0;
+
+button {
+  background-color: #661a00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  width: 100%;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #a23500;
+}
+
+input,
+.studentID,
+.password {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px -10px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #800000 0%, #808080 100%);
+  height: 80px;
+  padding: 0 20px;
+  gap: 20px;
+  border-bottom: 2px solid #d8bb65;
+  flex-wrap: wrap;
+}
+
+.ubTitle {
+  color: #d8bb65;
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  flex: 1;
+}
+
+.logo {
+  height: 75px;
+  width: 75px;
+  z-index: 1;
+  padding: 10px;
+}
+
+.logo2 {
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-box {
+  width: 25%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  border-radius: 10px;
+}
+
+.left-box .card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+}
+
+.left-box .card a {
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: #661a00;
+  display: block;
+  padding: 10px 0;
+}
+
+.left-box .card a:hover {
+  color: #d8bb65;
+}
+
+.right-box {
+  width: 70%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inbox1,
+.inbox2,
+h3 {
+  text-align: center;
+}
+
+.inbox1,
+.inbox2,
+p {
+  text-align: justify;
+}
+
+.inbox1,
+.inbox2 {
+  background-color: #0000001a;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #661a00;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover .card {
+  background-color: #fbe2cf;
+  cursor: pointer;
+}
+
+.card {
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-box,
+  .right-box,
+  .login-container {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .left-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .left-box .card {
+    width: 45%;
+    padding: 20px;
+  }
+
+  .right-box {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .ubTitle {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .logo,
+  .logo2 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .left-box .card {
+    width: 100%;
+  }
+
+  .login-container,
+  .right-box,
+  .left-box {
+    width: 100%;
+  }
+
+  .studentID input,
+  .password input {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ubTitle {
+    font-size: 16px;
+  }
+
+  .logo,
+  .logo2 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .left-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .left-box .card,
+  .login-container,
+  .right-box {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .studentID input,
+  .password input {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .login-container {
+    order: 1;
+  }
+
+  .left-box {
+    order: 2;
+  }
+
+  .right-box {
+    order: 3;
+  }
 }

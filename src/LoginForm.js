@@ -2,58 +2,91 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login({ setAuth }) {
-  const [username, setUsername] = useState("");
+  const [studentID, setStudentID] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-    // Dummy login check
-    if (username === "user@yahoo.com" && password === "password") {
-      setAuth(true); // set login state
-      navigate("/dashboard"); // redirect to dashboard
+    if (studentID === "1600307" && password === "password") {
+      alert("Login successful!");
+      setAuth(true); // ✅ Set authentication state
+      navigate("/dashboard"); // ✅ Navigate to dashboard
     } else {
       alert("Invalid credentials");
     }
   };
 
   return (
-    <div className="login_form">
-      <form onSubmit={handleSubmit}>
-        <div className="input_box">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter email address"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+    <div className="Entire">
+      {/* NAVIGATION BAR  */}
+      <header className="navbar">
+        <img src="/UBLOGO.png" alt="UB Logo" className="logo2" />
+        <h1 className="ubTitle">UNIVERSITY OF BATANGAS</h1>
+      </header>
+
+      {/* LOGIN BOX CONTAINER */}
+      <div className="main-layout">
+        <div className="left-box">
+          <a href="#" className="card-link">
+            <div className="card">PVMGO</div>
+          </a>
+          <a href="#" className="card-link">
+            <div className="card">SCHOOL</div>
+          </a>
+          <a href="#" className="card-link">
+            <div className="card">INFORMATION</div>
+          </a>
         </div>
 
-        <div className="input_box">
-          <div className="password_title">
-            <label htmlFor="password">Password</label>
-            <a href="#">Forgot Password?</a>
+        <div className="card login-container">
+          <img src="/CPESS.png" alt="CPESS Logo" className="logo" />
+          <form onSubmit={handleLogin}>
+            <div className="studentID">
+              <label>Student ID:</label>
+              <br />
+              <input
+                type="text"
+                value={studentID}
+                onChange={(e) => setStudentID(e.target.value)}
+                required
+                placeholder="e.g. 1600307"
+              />
+            </div>
+            <div className="password">
+              <label>Password:</label>
+              <br />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+
+        <div className="card right-box">
+          <div className="inbox1">
+            <h3>Vision</h3>
+            <p>
+              We envision the University of Batangas to be a center of
+              educational excellence committed to serve the broader community.
+            </p>
           </div>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="inbox2">
+            <h3>Mission</h3>
+            <p>
+              The University of Batangas provides quality education by promoting
+              personal and professional growth, thus enabling the person to
+              participate in a global, technology and research-driven
+              environment.
+            </p>
+          </div>
         </div>
-
-        <button type="submit">Log In</button>
-
-        <p className="sign_up">
-          Don't have an account? <a href="#">Sign up</a>
-        </p>
-      </form>
+      </div>
     </div>
   );
 }

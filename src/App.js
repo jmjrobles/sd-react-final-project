@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./LoginForm";
@@ -14,13 +13,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Login page */}
         <Route path="/" element={<Login setAuth={setIsAuthenticated} />} />
-
-        {/* Protected Dashboard page */}
         <Route
-          path="/dashboard"
-          element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
+          path="/Dashboard"
+          element={<Dashboard setAuth={setIsAuthenticated} />}
         />
       </Routes>
     </BrowserRouter>

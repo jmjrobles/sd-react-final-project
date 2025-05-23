@@ -1,270 +1,230 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function Dashboard() {
+function Dashboard({ setAuth }) {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    setAuth(false);
+    navigate("/");
+  };
   return (
-    <html>
-      <head>
-        <title>GeeksForGeeks</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="responsive.css" />
-      </head>
-
-      <body>
-        <header>
-          <div class="logosec">
-            <div class="logo">GeeksForGeeks</div>
-            <img
-              src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-              class="icn menuicn"
-              id="menuicn"
-              alt="menu-icon"
-            />
-          </div>
-          <div class="searchbar">
-            <input type="text" placeholder="Search" />
-            <div class="searchbtn">
-              <img
-                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-                class="icn srchicn"
-                alt="search-icon"
-              />
-            </div>
-          </div>
-
-          <div class="message">
-            <div class="circle"></div>
-            <img
-              src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
-              class="icn"
-              alt=""
-            />
-            <div class="dp">
-              <img
-                src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-                class="dpicn"
-                alt="dp"
-              />
-            </div>
-          </div>
-        </header>
-
-        <div class="main-container">
-          <div class="navcontainer">
-            <nav class="nav">
-              <div class="nav-upper-options">
-                <div class="nav-option option1">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-                    class="nav-img"
-                    alt="dashboard"
-                  />
-                  <h3>Dashboard</h3>
-                </div>
-
-                <div class="option2 nav-option">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
-                    class="nav-img"
-                    alt="articles"
-                  />
-                  <h3>Articles</h3>
-                </div>
-
-                <div class="nav-option option3">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-                    class="nav-img"
-                    alt="report"
-                  />
-                  <h3>Report</h3>
-                </div>
-
-                <div class="nav-option option4">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-                    class="nav-img"
-                    alt="institution"
-                  />
-                  <h3>Institution</h3>
-                </div>
-
-                <div class="nav-option option5">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-                    class="nav-img"
-                    alt="blog"
-                  />
-                  <h3>Profile</h3>
-                </div>
-
-                <div class="nav-option option6">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-                    class="nav-img"
-                    alt="settings"
-                  />
-                  <h3>Settings</h3>
-                </div>
-
-                <div class="nav-option logout">
-                  <img
-                    src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
-                    class="nav-img"
-                    alt="logout"
-                  />
-                  <h3>Logout</h3>
-                </div>
-              </div>
-            </nav>
-          </div>
-          <div class="main">
-            <div class="searchbar2">
-              <input type="text" name="" id="" placeholder="Search" />
-              <div class="searchbtn">
-                <img
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-                  class="icn srchicn"
-                  alt="search-button"
-                />
-              </div>
-            </div>
-
-            <div class="box-container">
-              <div class="box box1">
-                <div class="text">
-                  <h2 class="topic-heading">60.5k</h2>
-                  <h2 class="topic">Article Views</h2>
-                </div>
-
-                <img
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
-                  alt="Views"
-                />
-              </div>
-
-              <div class="box box2">
-                <div class="text">
-                  <h2 class="topic-heading">150</h2>
-                  <h2 class="topic">Likes</h2>
-                </div>
-
-                <img
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
-                  alt="likes"
-                />
-              </div>
-
-              <div class="box box3">
-                <div class="text">
-                  <h2 class="topic-heading">320</h2>
-                  <h2 class="topic">Comments</h2>
-                </div>
-
-                <img
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
-                  alt="comments"
-                />
-              </div>
-
-              <div class="box box4">
-                <div class="text">
-                  <h2 class="topic-heading">70</h2>
-                  <h2 class="topic">Published</h2>
-                </div>
-
-                <img
-                  src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png"
-                  alt="published"
-                />
-              </div>
-            </div>
-
-            <div class="report-container">
-              <div class="report-header">
-                <h1 class="recent-Articles">Recent Articles</h1>
-                <button class="view">View All</button>
-              </div>
-
-              <div class="report-body">
-                <div class="report-topic-heading">
-                  <h3 class="t-op">Article</h3>
-                  <h3 class="t-op">Views</h3>
-                  <h3 class="t-op">Comments</h3>
-                  <h3 class="t-op">Status</h3>
-                </div>
-
-                <div class="items">
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 73</h3>
-                    <h3 class="t-op-nextlvl">2.9k</h3>
-                    <h3 class="t-op-nextlvl">210</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 72</h3>
-                    <h3 class="t-op-nextlvl">1.5k</h3>
-                    <h3 class="t-op-nextlvl">360</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 71</h3>
-                    <h3 class="t-op-nextlvl">1.1k</h3>
-                    <h3 class="t-op-nextlvl">150</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 70</h3>
-                    <h3 class="t-op-nextlvl">1.2k</h3>
-                    <h3 class="t-op-nextlvl">420</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 69</h3>
-                    <h3 class="t-op-nextlvl">2.6k</h3>
-                    <h3 class="t-op-nextlvl">190</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 68</h3>
-                    <h3 class="t-op-nextlvl">1.9k</h3>
-                    <h3 class="t-op-nextlvl">390</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 67</h3>
-                    <h3 class="t-op-nextlvl">1.2k</h3>
-                    <h3 class="t-op-nextlvl">580</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 66</h3>
-                    <h3 class="t-op-nextlvl">3.6k</h3>
-                    <h3 class="t-op-nextlvl">160</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-
-                  <div class="item1">
-                    <h3 class="t-op-nextlvl">Article 65</h3>
-                    <h3 class="t-op-nextlvl">1.3k</h3>
-                    <h3 class="t-op-nextlvl">220</h3>
-                    <h3 class="t-op-nextlvl label-tag">Published</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="dashboard-root">
+      <aside className="sidebar">
+        <nav>
+          <ul className="sidebar-section">
+            <li className="sidebar-section-title">Main Menu</li>
+            <li>
+              <a href="#" className="sidebar-link active">
+                <span className="sidebar-icon">
+                  {/* Home Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12.707 2.293A.996.996 0 0 0 12 2H3a1 1 0 0 0-1 1v9c0 .266.105.52.293.707l9 9a.997.997 0 0 0 1.414 0l9-9a.999.999 0 0 0 0-1.414l-9-9zM12 19.586l-8-8V4h7.586l8 8L12 19.586z" />
+                    <circle cx="7.507" cy="7.505" r="1.505" />
+                  </svg>
+                </span>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" className="sidebar-link">
+                <span className="sidebar-icon">
+                  {/* Courses Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+                  </svg>
+                </span>
+                Courses
+              </a>
+            </li>
+            <li>
+              <a href="#" className="sidebar-link">
+                <span className="sidebar-icon">
+                  {/* Grades Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M21 20V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1zm-2-1H5V5h14v14z" />
+                    <path d="M10.381 12.309l3.172 1.586a1 1 0 0 0 1.305-.38l3-5-1.715-1.029-2.523 4.206-3.172-1.586a1.002 1.002 0 0 0-1.305.38l-3 5 1.715 1.029 2.523-4.206z" />
+                  </svg>
+                </span>
+                Grades
+              </a>
+            </li>
+            <li>
+              <a href="#" className="sidebar-link">
+                <span className="sidebar-icon">
+                  {/* Calendar/Schedule Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 4h-1v2h1v-2zm15 0h-1v2h1v-2zm-8 3c-3.314 0-6 2.686-6 6 0 3.313 2.686 6 6 6s6-2.687 6-6c0-3.314-2.686-6-6-6zm0 2a4 4 0 110 8 4 4 0 010-8zm9-2v16c0 1.104-.896 2-2 2h-14c-1.104 0-2-.896-2-2v-16c0-1.104.896-2 2-2h14c1.104 0 2 .896 2 2zm-2 0v2h-14v-2h14zm-7 3c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z" />
+                  </svg>
+                </span>
+                Schedule
+              </a>
+            </li>
+            <li>
+              <a href="#" className="sidebar-link">
+                <span className="sidebar-icon">
+                  {/* Announcements Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M3 13h2v-2H3v2zm14.293-6.707l-1.414 1.414c1.165 1.165 1.165 3.071 0 4.236l1.414 1.414c1.949-1.949 1.949-5.115 0-7.064zM19 3h-2v2h2V3zm-4.707 2.707l-1.414-1.414C9.93 6.36 8.933 10.966 12 14.034c3.067-3.068 2.07-7.674-.293-11.327zm2.707 14.293v2h2v-2h-2zm-12 0h2v2h-2v-2z" />
+                  </svg>
+                </span>
+                Announcements
+              </a>
+            </li>
+            <li>
+              <a href="#" className="sidebar-link">
+                <span className="sidebar-icon">
+                  {/* Profile Icon */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.859 0-7 3.141-7 7h2c0-2.757 2.243-5 5-5s5 2.243 5 5h2c0-3.859-3.141-7-7-7z" />
+                  </svg>
+                </span>
+                Profile
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div className="user-actions">
+          <button aria-label="Logout" onClick={handleLogout}>
+            logout
+          </button>
         </div>
-
-        <script src="./index.js"></script>
-      </body>
-    </html>
+      </aside>
+      <div className="main-content">
+        <header className="main-header">
+          <h1>University of Batangas</h1>
+          <div className="main-actions"></div>
+        </header>
+        <section className="dashboard-stats">
+          <div className="stat-card">
+            <div className="stat-icon stat-accent">
+              {/* Courses Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 20V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1zm-2-1H5V5h14v14z" />
+                <path d="M10.381 12.309l3.172 1.586a1 1 0 0 0 1.305-.38l3-5-1.715-1.029-2.523 4.206-3.172-1.586a1.002 1.002 0 0 0-1.305.38l-3 5 1.715 1.029 2.523-4.206z" />
+              </svg>
+            </div>
+            <div>
+              <span className="stat-number">8</span>
+              <div className="stat-label">Total Courses</div>
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon">
+              {/* Grades Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M20 10H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1zm-1 10H5v-8h14v8zM5 6h14v2H5zM7 2h10v2H7z" />
+              </svg>
+            </div>
+            <div>
+              <span className="stat-number">89%</span>
+              <div className="stat-label">Average Grade</div>
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon">
+              {/* Schedule Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 4h-1v2h1v-2zm15 0h-1v2h1v-2zm-8 3c-3.314 0-6 2.686-6 6 0 3.313 2.686 6 6 6s6-2.687 6-6c0-3.314-2.686-6-6-6zm0 2a4 4 0 110 8 4 4 0 010-8zm9-2v16c0 1.104-.896 2-2 2h-14c-1.104 0-2-.896-2-2v-16c0-1.104.896-2 2-2h14c1.104 0 2 .896 2 2zm-2 0v2h-14v-2h14zm-7 3c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z" />
+              </svg>
+            </div>
+            <div>
+              <span className="stat-number">5</span>
+              <div className="stat-label">Upcoming Classes</div>
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon">
+              {/* Announcements Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M3 13h2v-2H3v2zm14.293-6.707l-1.414 1.414c1.165 1.165 1.165 3.071 0 4.236l1.414 1.414c1.949-1.949 1.949-5.115 0-7.064zM19 3h-2v2h2V3zm-4.707 2.707l-1.414-1.414C9.93 6.36 8.933 10.966 12 14.034c3.067-3.068 2.07-7.674-.293-11.327zm2.707 14.293v2h2v-2h-2zm-12 0h2v2h-2v-2z" />
+              </svg>
+            </div>
+            <div>
+              <span className="stat-number">3</span>
+              <div className="stat-label">Announcements</div>
+            </div>
+          </div>
+        </section>
+        <section className="dashboard-grid">
+          <div className="dashboard-panel">
+            <h2>Category Section</h2>
+            <div className="category-list">
+              <div className="category-item">Courses</div>
+              <div className="category-item">Grades</div>
+              <div className="category-item">Schedule</div>
+              <div className="category-item">Announcements</div>
+              <div className="category-item">Profile</div>
+            </div>
+          </div>
+          <div className="dashboard-panel main-view">
+            <h2>Main View</h2>
+            <div>
+              This is the main view area where selected content will be
+              displayed. You can enhance it with dynamic data and interactive
+              components.
+            </div>
+          </div>
+          <div className="dashboard-panel secondary-view">
+            <h2>Secondary View</h2>
+            <div>
+              This is an additional view area for extra information,
+              notifications, or other relevant panels.
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   );
 }
+
 export default Dashboard;
