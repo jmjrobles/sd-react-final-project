@@ -7,6 +7,7 @@ function Dashboard({ setAuth }) {
     setAuth(false);
     navigate("/");
   };
+  const example = 10;
   return (
     <div className="dashboard-root">
       <aside className="sidebar">
